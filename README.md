@@ -6,6 +6,7 @@
 - Tailwind CSS
 - Daisy UI
 - Firebase 
+- Context API
 
 ## React + Vite
 
