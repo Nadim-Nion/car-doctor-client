@@ -1,5 +1,11 @@
 # Car Doctor Website (Client Side)
 
+## Technologies:
+- React + Vite
+- React Router
+- Tailwind CSS
+- Daisy UI
+- Firebase 
 
 ## React + Vite
 
