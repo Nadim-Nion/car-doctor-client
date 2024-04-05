@@ -33,7 +33,7 @@ const Bookings = () => {
                             <th>Customer Name</th>
                             <th>Email</th>
                             <th>Price</th>
-                            <th></th>
+                            <th>Status</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -41,6 +41,8 @@ const Bookings = () => {
                             bookings.map(booking => <BookingRow
                                 key={booking._id}
                                 booking={booking}
+                                bookings={bookings}
+                                setBookings={setBookings}
                             ></BookingRow>)
                         }
 
