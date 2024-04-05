@@ -1,13 +1,13 @@
 
-**Car Doctor Website - Client Side**
+# Car Doctor Website - Client Side
 
 A user-friendly web application for car care services, built with React, Tailwind CSS, and Firebase.
 
-**Description:**
+## Description:
 
 This repository houses the client-side code for the Car Doctor website, a dynamic web application designed to streamline car care services for users. Leveraging React's component-based architecture and Vite's blazing-fast development environment, the application boasts a smooth and responsive user experience across laptops, tablets, and mobile devices.
 
-**Key Features:**
+## Key Features:
 
 - **Seamless Service Exploration:** Users can effortlessly browse through the offered car care services, presented in a visually appealing and responsive design that adapts flawlessly to various screen sizes.
 - **Effortless Service Booking:** With a simple click on the "Book" button, users initiate the service booking process. This intuitive flow allows them to effortlessly schedule appointments for their car care needs.
@@ -17,7 +17,7 @@ This repository houses the client-side code for the Car Doctor website, a dynami
 - **Secure User Management:** My Bookings acts as a private route, accessible only after successful user registration. This ensures that personal service information remains protected.
 - **Streamlined Authentication:** New users can register for an account, creating a secure profile within the system. Existing users can log in with their credentials, facilitating easy access to their bookings and account details.
 
-**Technologies:**
+## Technologies:
 
 - Front-End: React + Vite
 - Routing: React Router
@@ -33,6 +33,7 @@ This repository houses the client-side code for the Car Doctor website, a dynami
 * Netlify:
 
 * Surge:
+
 ## Installation
 
 Get up and running with the Car Doctor website's client-side code in just three easy steps using npm:
