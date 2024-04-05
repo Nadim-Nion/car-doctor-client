@@ -30,9 +30,9 @@ This repository houses the client-side code for the Car Doctor website, a dynami
 
 * Firebase: https://car-doctor-client-99145.web.app/
 
-* Netlify: https://roaring-squirrel-44c349.netlify.app/
+* Netlify: https://car-doctor-client-nion.netlify.app/
 
-* Surge:
+* Surge: https://hungry-pancake.surge.sh/
 
 ## Installation
 
