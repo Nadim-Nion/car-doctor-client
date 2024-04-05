@@ -28,9 +28,9 @@ This repository houses the client-side code for the Car Doctor website, a dynami
 
 ## Live Website
 
-* Firebase: 
+* Firebase: https://car-doctor-client-99145.web.app/
 
-* Netlify:
+* Netlify: 
 
 * Surge:
 
