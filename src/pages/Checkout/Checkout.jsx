@@ -23,7 +23,7 @@ const Checkout = () => {
         const order = { first, last, phone, email, message, _id, title, price, img };
         // console.log(order);
 
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://car-doctor-server-eight-delta.vercel.app/bookings', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
