@@ -1,19 +1,25 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../../providers/AuthProvider';
 import BookingRow from './BookingRow';
+import axios from 'axios';
 
 const Bookings = () => {
     const { user } = useContext(AuthContext);
     const [bookings, setBookings] = useState([]);
 
-    const url = `https://car-doctor-server-eight-delta.vercel.app/bookings?email=${user?.email}`;
+    // const url = `https://car-doctor-server-eight-delta.vercel.app/bookings?email=${user?.email}`;
+    const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
     useEffect(() => {
-        fetch(url)
+        axios.get(url, { withCredentials: true })
+            .then(res => {
+                setBookings(res.data);
+            })
+        /* fetch(url)
             .then(res => res.json())
             .then(data => {
                 setBookings(data);
-            })
+            }) */
     }, [url])
 
     return (

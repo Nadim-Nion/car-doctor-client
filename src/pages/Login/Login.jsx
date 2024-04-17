@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import img from "../../assets/images/login/login.svg";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider';
+import axios from 'axios';
 
 const Login = () => {
     const { signIn } = useContext(AuthContext);
@@ -25,7 +26,21 @@ const Login = () => {
             .then(result => {
                 const loggedUser = result.user;
                 console.log(loggedUser);
-                navigate(from, { replace: true });
+
+                const user = { email };
+
+                // Get the Access Token From Server to Client
+                axios.post('http://localhost:5000/jwt', user, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data);
+
+                        if (res.data.success) {
+                            navigate(from, { replace: true });
+                        }
+                    })
+                    .catch(error => {
+                        console.log(error.message);
+                    })
             })
             .catch(error => {
                 console.log(error);
