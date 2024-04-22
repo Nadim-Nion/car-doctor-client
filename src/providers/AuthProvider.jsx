@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from 'react';
 import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut } from "firebase/auth";
 import app from '../firebase/firebase.config';
+import axios from 'axios';
 
 export const AuthContext = createContext(null);
 const auth = getAuth(app);
@@ -27,8 +28,27 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             console.log('current user inside the auth state observer', currentUser);
+            // const userEmail = currentUser?.email || user?.email;
+            /* const userEmail = currentUser?.email;
+            const loggedUser = { email: userEmail }; */
+            const loggedUser = { email: currentUser?.email };
             setUser(currentUser);
             setLoading(false);
+
+            // If current user exists, issue a token
+            if (currentUser) {
+                axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
+                    .then(res => {
+                        console.log('Token response', res.data);
+                    })
+            }
+            else {
+                // if user doesn't exist, clear the cookie from browser
+                axios.post('http://localhost:5000/logout', loggedUser, { withCredentials: true })
+                    .then(res => {
+                        console.log(res.data);
+                    })
+            }
         })
 
         return () => {
