@@ -37,14 +37,14 @@ const AuthProvider = ({ children }) => {
 
             // If current user exists, issue a token
             if (currentUser) {
-                axios.post('http://localhost:5000/jwt', loggedUser, { withCredentials: true })
+                axios.post('https://car-doctor-server-eight-delta.vercel.app/jwt', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log('Token response', res.data);
                     })
             }
             else {
                 // if user doesn't exist, clear the cookie from browser
-                axios.post('http://localhost:5000/logout', loggedUser, { withCredentials: true })
+                axios.post('https://car-doctor-server-eight-delta.vercel.app/logout', loggedUser, { withCredentials: true })
                     .then(res => {
                         console.log(res.data);
                     })
