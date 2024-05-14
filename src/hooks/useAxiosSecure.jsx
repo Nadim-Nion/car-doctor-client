@@ -4,8 +4,9 @@ import useAuth from './useAuth';
 import { useNavigate } from 'react-router-dom';
 
 // axios instance
-const axiosSecure = axios.create({
+export const axiosSecure = axios.create({
     baseURL: 'https://car-doctor-server-eight-delta.vercel.app',
+    // baseURL: 'http://localhost:5000',
     withCredentials: true
 });
 
